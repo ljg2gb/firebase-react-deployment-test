@@ -1,16 +1,20 @@
 import React from 'react';
 import '../src/styles/global.sass';
+import { Switch, Route } from 'react-router-dom';
+
+import Home from './Pages/Home'
+import About from './Pages/About'
+import Error from './Pages/Error'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Testing testing testing
-        </p>
-      </header>
-      <h1>This is a test</h1>
-    </div>
+    <main>
+      <Switch>
+        <Route path="/" component={Home} exact/>
+        <Route path="/about" component={About} />
+        <Route component={Error} />
+      </Switch>
+    </main>
   );
 }
 
